@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spot Store</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 5px;
+        }
+
+        /* Search */
+        .search-area {
+            text-align: center;
+            padding: 25px 10px 10px;
+        }
+
+        #searchInput {
+            width: 320px;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+
+        #searchBtn {
+            padding: 12px 22px;
+            margin-left: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 15px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #888;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .buttons button:hover {
+            background: #222;
+            color: white;
+        }
+
+        #message {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .not-found {
+            width: 80%;
+            margin: 20px auto;
+            padding: 30px;
+            background: white;
+            border: 2px solid #ff4d4d;
+            border-radius: 10px;
+            text-align: center;
+            color: #d00000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #products {
+            width: 95%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .card h2 {
+            font-size: 21px;
+            margin: 10px;
+        }
+
+        .price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            background: #087fda;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .buy-btn:hover {
+            background: #005fa8;
+        }
+
+        @media (max-width: 800px) {
+
+            #products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            #products {
+                grid-template-columns: 1fr;
+            }
+
+            #searchInput {
+                width: 90%;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <header>
+
+        <h1>🛍️ Spot Store</h1>
+
+        <p>Find Your Favourite Jerseys</p>
+
+    </header>
+
+
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter product name..."
+        >
+
+        <button id="searchBtn">
+            🔍 Search
+        </button>
+
+    </div>
+
+
+
+    <div class="buttons">
+
+
+        <button onclick="showFootball()">
+            ⚽ Football Jersey
+        </button>
+
+        <button onclick="showCricket()">
+            🏏 Cricket Jersey
+        </button>
+
+        <button onclick="clearProducts()">
+            ❌ Clear
+        </button>
+
+    </div>
+
+
+
+    <div id="message"></div>
+
+
+    <div id="products"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
